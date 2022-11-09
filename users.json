@@ -1,0 +1,242 @@
+[{
+  "_id": {
+    "$oid": "636bc894b7bfa8db77ce00dc"
+  },
+  "id": 1,
+  "name": "Bohdan",
+  "surname": "Laba",
+  "age": 19,
+  "email": "nanika@gmail.com",
+  "password": "qwerty",
+  "interests": [
+    "Guitar",
+    "Languages",
+    "Swimming"
+  ],
+  "friends": [
+    7,
+    8
+  ],
+  "subscriptions": [
+    3,
+    7,
+    10,
+    8,
+    12
+  ]
+},{
+  "_id": {
+    "$oid": "636bc9b87f1ee2092d509db0"
+  },
+  "id": 2,
+  "name": "Chirstiana",
+  "surname": "Ntum",
+  "age": 19,
+  "email": "wprem@gmail.com",
+  "password": "qwqas",
+  "interests": [
+    "Books"
+  ],
+  "friends": [],
+  "subscriptions": []
+},{
+  "_id": {
+    "$oid": "636bcacb7f1ee2092d509db1"
+  },
+  "id": 3,
+  "name": "Rahul",
+  "surname": "George",
+  "age": 22,
+  "email": "wefnew@gmail.com",
+  "password": "qwerty",
+  "interests": [
+    "SciFi"
+  ],
+  "friends": [],
+  "subscriptions": []
+},{
+  "_id": {
+    "$oid": "636bd43f9b3afc78349548f4"
+  },
+  "id": 4,
+  "name": "Oleh",
+  "surname": "Gnat",
+  "age": 12,
+  "email": "olehgrant@gmail.com",
+  "password": "zxcvbn",
+  "interests": [
+    "Computer Games",
+    "Board Games"
+  ],
+  "friends": [],
+  "subscriptions": [
+    1,
+    2,
+    3
+  ]
+},{
+  "_id": {
+    "$oid": "636bd733e2315750a8ec7757"
+  },
+  "id": 6,
+  "name": "Yulia",
+  "surname": "Graza",
+  "age": 23,
+  "email": "grazayulia@gmail.com",
+  "password": "qwerty123",
+  "interests": [
+    "Procrastinating"
+  ],
+  "friends": [
+    5
+  ],
+  "subscriptions": [
+    11,
+    4,
+    5,
+    2
+  ]
+},{
+  "_id": {
+    "$oid": "636bde789610b6a44092d142"
+  },
+  "id": 7,
+  "name": "Adrian",
+  "surname": "Koropets",
+  "age": 24,
+  "email": "adkoro@gmail.com",
+  "password": "asdf",
+  "interests": [
+    "Movies",
+    "Writing"
+  ],
+  "friends": [
+    1,
+    8
+  ],
+  "subscriptions": [
+    1,
+    2,
+    3,
+    4,
+    10,
+    8,
+    5
+  ]
+},{
+  "_id": {
+    "$oid": "636be563bd36bafadaa0e896"
+  },
+  "id": 8,
+  "name": "Jordan",
+  "surname": "Lukash",
+  "age": 61,
+  "email": "jbLukash@ukr.net",
+  "password": "itsahardpassword",
+  "interests": [
+    "Philosophy",
+    "Literature",
+    "Youtube",
+    "Politics"
+  ],
+  "friends": [
+    1,
+    7
+  ],
+  "subscriptions": [
+    1,
+    7
+  ]
+},{
+  "_id": {
+    "$oid": "636be65cbd36bafadaa0e898"
+  },
+  "id": 9,
+  "name": "Takahiro",
+  "surname": "Yousuke",
+  "age": 38,
+  "email": "takaiyo@yahoo.com",
+  "password": "nihongoshabettemasuka",
+  "interests": [
+    "Culture",
+    "Math",
+    "Guitar"
+  ],
+  "friends": [],
+  "subscriptions": [
+    1,
+    8
+  ]
+},{
+  "_id": {
+    "$oid": "636be724bd36bafadaa0e89a"
+  },
+  "id": 10,
+  "name": "Haramoto",
+  "surname": "Kamikoto",
+  "age": 23,
+  "email": "harakoto@yahoo.com",
+  "password": "qwertyzxcvb",
+  "interests": [
+    "Sleeping"
+  ],
+  "friends": [],
+  "subscriptions": []
+},{
+  "_id": {
+    "$oid": "636be8f2bd36bafadaa0e89b"
+  },
+  "id": 11,
+  "name": "Victor",
+  "surname": "Nimets",
+  "age": 81,
+  "email": "vikmin@gmail.com",
+  "password": "asdfgh",
+  "interests": [
+    "be silent",
+    "Sit near hearth"
+  ],
+  "friends": [],
+  "subscriptions": []
+},{
+  "_id": {
+    "$oid": "636be994bd36bafadaa0e89c"
+  },
+  "id": 12,
+  "name": "Ivan",
+  "surname": "Kerpa",
+  "age": 12,
+  "email": "kepiv@gmail.com",
+  "password": "qwaszx",
+  "interests": [
+    "Guitar",
+    "Music"
+  ],
+  "friends": [],
+  "subscriptions": []
+},{
+  "_id": {
+    "$oid": "636beabc630f549d2e99a5b3"
+  },
+  "id": 5,
+  "name": "Oksana",
+  "surname": "Kryts",
+  "age": 19,
+  "email": "arst@gmail.com",
+  "password": "shortpass",
+  "interests": [
+    "Youtube",
+    "Languages",
+    "Simping"
+  ],
+  "friends": [
+    6
+  ],
+  "subscriptions": [
+    1,
+    3,
+    6,
+    2,
+    0
+  ]
+}]

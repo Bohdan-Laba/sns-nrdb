@@ -1,0 +1,339 @@
+[{
+  "_id": {
+    "$oid": "636be3254a7026b458e8ee90"
+  },
+  "userId": 1,
+  "body": "Hey, it's the first post!",
+  "date": {
+    "$date": {
+      "$numberLong": "1668014885667"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636be32f4a7026b458e8ee91"
+  },
+  "userId": 1,
+  "body": "You can like and comment",
+  "date": {
+    "$date": {
+      "$numberLong": "1668014895406"
+    }
+  },
+  "comments": [
+    {
+      "body": ":)",
+      "userId": 1
+    }
+  ],
+  "likes": [
+    4
+  ]
+},{
+  "_id": {
+    "$oid": "636be47dbd36bafadaa0e894"
+  },
+  "userId": 4,
+  "body": "What language are you studying right now?",
+  "date": {
+    "$date": {
+      "$numberLong": "1668015229501"
+    }
+  },
+  "comments": [
+    {
+      "body": "Ukrainian",
+      "userId": 7
+    },
+    {
+      "body": "Yo",
+      "userId": 7
+    },
+    {
+      "body": "I'm just polishing my English usually by watching some interesting content on the internet",
+      "userId": 1
+    }
+  ],
+  "likes": [
+    7,
+    1
+  ]
+},{
+  "_id": {
+    "$oid": "636be4c7bd36bafadaa0e895"
+  },
+  "userId": 7,
+  "body": "I've learned the acoustic part of Metalica's \"Nothing else matters\"!",
+  "date": {
+    "$date": {
+      "$numberLong": "1668015303849"
+    }
+  },
+  "comments": [
+    {
+      "body": "DM me and I'll send you a voice message me playing!",
+      "userId": 7
+    },
+    {
+      "body": "Congratulations! Can you play some other songs by Metallica?",
+      "userId": 8
+    },
+    {
+      "body": "Wow! I wish I could play guitar",
+      "userId": 9
+    },
+    {
+      "body": "I also can play Fade to Black!",
+      "userId": 7
+    }
+  ],
+  "likes": [
+    8,
+    9
+  ]
+},{
+  "_id": {
+    "$oid": "636be59bbd36bafadaa0e897"
+  },
+  "userId": 8,
+  "body": "Hey, people! I'm currently reading \"Thinking fast and slow by Daniel Kanneman! Have anyone read this book?\"",
+  "date": {
+    "$date": {
+      "$numberLong": "1668015515597"
+    }
+  },
+  "comments": [
+    {
+      "body": "Sure! It's a great book! I wanted to read it all during summer holidays but I didn't make it in time. Now I have to study a lot. I'll finish it in the winter!",
+      "userId": 1
+    }
+  ],
+  "likes": [
+    1
+  ]
+},{
+  "_id": {
+    "$oid": "636be6a8bd36bafadaa0e899"
+  },
+  "userId": 9,
+  "body": "I hope those gaijins won't take over my country!!!!",
+  "date": {
+    "$date": {
+      "$numberLong": "1668015784558"
+    }
+  },
+  "comments": [
+    {
+      "body": "I mean gaikokujins, sorry. I'm absolutely polite after all. ",
+      "userId": 9
+    }
+  ],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636beafdf726fcde4c3475e5"
+  },
+  "userId": 6,
+  "body": "Hey, I'm new here! How to use this SNS?",
+  "date": {
+    "$date": {
+      "$numberLong": "1668016893511"
+    }
+  },
+  "comments": [
+    {
+      "body": "Well, how to explain it better...",
+      "userId": 1
+    },
+    {
+      "body": "Hey, I saw you on Slowly! Why did you leave that sns?",
+      "userId": 5
+    }
+  ],
+  "likes": [
+    1
+  ]
+},{
+  "_id": {
+    "$oid": "636beb43046a9cc0b87bf480"
+  },
+  "userId": 3,
+  "body": "Hey, I got some flood and spam!!!!",
+  "date": {
+    "$date": {
+      "$numberLong": "1668016963799"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636beb4a046a9cc0b87bf481"
+  },
+  "userId": 3,
+  "body": "Hahahahahah, here you are",
+  "date": {
+    "$date": {
+      "$numberLong": "1668016970060"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636beb62046a9cc0b87bf482"
+  },
+  "userId": 3,
+  "body": "Hey, hey, hey! What vibe do we have here?",
+  "date": {
+    "$date": {
+      "$numberLong": "1668016994530"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636beb76046a9cc0b87bf483"
+  },
+  "userId": 3,
+  "body": "Where memes etc?",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017014570"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636beb87046a9cc0b87bf484"
+  },
+  "userId": 3,
+  "body": "We need some sh*tposts!!!!!",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017031168"
+    }
+  },
+  "comments": [
+    {
+      "body": "No, we have enought already",
+      "userId": 1
+    }
+  ],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636bec12046a9cc0b87bf485"
+  },
+  "userId": 3,
+  "body": "If you ask Rick Astley for a copy of the movie \"UP\", he cannot give you it as he can never give you up. But, by doing that, he is letting you down, and thus, is creating something known as the Astley Paradox.",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017170653"
+    }
+  },
+  "comments": [
+    {
+      "body": "*Insert RickRoll here*",
+      "userId": 1
+    }
+  ],
+  "likes": [
+    1
+  ]
+},{
+  "_id": {
+    "$oid": "636bec1c046a9cc0b87bf486"
+  },
+  "userId": 3,
+  "body": "I'm Blue - da ba dee da ba dye, da ba dee da ba dye Da ba dee da ba dye, da ba dee da ba dye Da ba dee da ba dye, da ba dee da ba dye Da ba dee da ba dye",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017180289"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636bec42046a9cc0b87bf487"
+  },
+  "userId": 3,
+  "body": "I just punched a hole in my wall. I'm in tears. I'm not joking I'm actually freaking out right now. I feel like this is the angriest I've been in my life. I'm praying right now that this last year is a dream I'll wake up from. Is there a way we can sue N",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017218856"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636bec87046a9cc0b87bf488"
+  },
+  "userId": 1,
+  "body": "Stop. Enough",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017287311"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636becdf046a9cc0b87bf489"
+  },
+  "userId": 1,
+  "body": "Ok, some more posts",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017375077"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636bed13046a9cc0b87bf48a"
+  },
+  "userId": 5,
+  "body": "What did you do yesterday?",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017427651"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636bed2a046a9cc0b87bf48b"
+  },
+  "userId": 5,
+  "body": "Why Russia invaded Ukraine?",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017450572"
+    }
+  },
+  "comments": [],
+  "likes": []
+},{
+  "_id": {
+    "$oid": "636bed76046a9cc0b87bf48c"
+  },
+  "userId": 5,
+  "body": "Now a lot of people from Ukraine unable to work and study properly. We need to put an end to this war as soon as possible!",
+  "date": {
+    "$date": {
+      "$numberLong": "1668017526235"
+    }
+  },
+  "comments": [],
+  "likes": []
+}]
