@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sns_nrdb
+namespace sns_nrdb.ConsoleApp
 {
-    public class User
+    internal class Config
     {
-
-
     }
 }
