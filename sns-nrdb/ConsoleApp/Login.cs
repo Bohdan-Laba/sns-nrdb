@@ -9,10 +9,12 @@ namespace sns_nrdb.ConsoleApp
     public class Login
     {
         private readonly DbConnection _dbConnection;
+        private readonly Neo4jConnection _neo4jConnection;
 
-        public Login(DbConnection _dbConnection)
+        public Login(DbConnection dbConnection, Neo4jConnection neo4jConnection)
         {
-            this._dbConnection = _dbConnection;
+            _dbConnection = dbConnection;
+            _neo4jConnection = neo4jConnection;
         }
 
         public User CurrentUser { get; private set; }
@@ -30,6 +32,7 @@ namespace sns_nrdb.ConsoleApp
             }
 
             var userMongo = _dbConnection.Users.GetByCredentials(email, password);
+            var userNeo4j = _neo4jConnection.Users.GetUser(email, password);
 
             if (userMongo != null)
             {

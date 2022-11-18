@@ -83,7 +83,7 @@ namespace sns_nrdb.Data.Repositories
 
         }
 
-        public void UnSubscribe(int userId, int anotherUId)
+        public void Unsubscribe(int userId, int anotherUId)
         {
             var user = users.Find(Builders<User>.Filter.Eq(u => u.UserId, userId)).FirstOrDefault();
             var anotherUser = users.Find(Builders<User>.Filter.Eq(u => u.UserId, anotherUId)).FirstOrDefault();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Neo4jClient;
+using sns_nrdb.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace sns_nrdb.ConsoleApp
@@ -7,12 +9,15 @@ namespace sns_nrdb.ConsoleApp
     {
         private readonly Login _login;
         private readonly DbConnection _dbConnection;
+        private readonly Neo4jConnection _neo4jConnection;
 
-        public Menu(Login login, DbConnection dbConnection)
+        public Menu(Login login, DbConnection dbConnection, Neo4jConnection neo4jConnection)
         {
             _login = login;
             _dbConnection = dbConnection;
+            _neo4jConnection = neo4jConnection;
         }
+
         public void ShowMenu()
         {
             if (_login.IsAuthenticated())
@@ -27,8 +32,7 @@ namespace sns_nrdb.ConsoleApp
 
         private void ShowAuthentaciatedUserMenu()
         {
-            ;
-            int input = -1;
+            int input;
 
             do
             {
@@ -43,9 +47,13 @@ namespace sns_nrdb.ConsoleApp
                 Console.WriteLine("9. Show Stream");
                 Console.WriteLine("10. Like/Dislike Post");
                 Console.WriteLine("11. Show Friends");
-                Console.WriteLine("12. Unsubscribe");;
+                Console.WriteLine("12. Unsubscribe");
+                Console.WriteLine("13. Check if user is a friend");
+                Console.WriteLine("14. Show shortest path length");
+                Console.WriteLine("15. Check you are subscribed");
+
                 Console.WriteLine("0. Sign Out");
-                Console.Write(">> ");
+                Console.Write("Enter a number: ");
                 input = int.Parse(Console.ReadLine());
 
                 switch (input)
@@ -78,13 +86,22 @@ namespace sns_nrdb.ConsoleApp
                         ShowPosts();
                         break;
                     case 10:
-                        LikeOrDislikePost();
+                        LikeOrUnlikePost();
                         break;
                     case 11:
                         ShowFriends();
                         break;
                     case 12:
-                        UnSubscribe();
+                        Unsubsribe();
+                        break;
+                    case 13:
+                        ShowIfFriends();
+                        break;
+                    case 14:
+                        ShowPathLength();
+                        break;
+                    case 15:
+                        ShowIfFollows();
                         break;
                     case 0:
                         SignOut();
@@ -99,12 +116,14 @@ namespace sns_nrdb.ConsoleApp
             int userId = int.Parse(Console.ReadLine());
 
             _dbConnection.Users.Delete(_login.CurrentUser.UserId);
+            _neo4jConnection.Users.DeleteUser(_login.CurrentUser.UserId);
             Console.WriteLine($"User {_login.CurrentUser.Email} Deleted");
             SignOut();
         }
         private void CreateUser()
         {
             var userMongo = new User();
+            var userNeo4j = new UserNeo4j();
             int input = -1;
             Console.Write("Name: ");
             var name = Console.ReadLine();
@@ -148,7 +167,18 @@ namespace sns_nrdb.ConsoleApp
                 Subscriptions = subs,
                 Friends = friends
             };
-           _dbConnection.Users.Add(userMongo);
+            userNeo4j = new UserNeo4j
+            {
+                UserId = userMongo.UserId,
+                Name = name,
+                Surname = surname,
+                Email = email,
+                Age = age,
+                Password = password
+            };
+
+            _dbConnection.Users.Add(userMongo);
+            _neo4jConnection.Users.Add(userNeo4j);
 
             Console.WriteLine($"User {userMongo.Name} {userMongo.Surname} Created");
         }
@@ -157,17 +187,19 @@ namespace sns_nrdb.ConsoleApp
             Console.WriteLine("User Id: ");
             var userId = int.Parse(Console.ReadLine());
            _dbConnection.Users.Subscribe(_login.CurrentUser.UserId, userId);
-            Console.WriteLine("Subscribed");
+           _neo4jConnection.Users.CreateRelationshipUserFollows(_login.CurrentUser.UserId, userId);
+            Console.WriteLine("Subscribed successfully");
 
         }
-        private void UnSubscribe()
+        private void Unsubsribe()
         {
             Console.WriteLine("User Id: ");
             var userId = int.Parse(Console.ReadLine());
-           _dbConnection.Users.UnSubscribe(_login.CurrentUser.UserId, userId);
-            Console.WriteLine("Unsubscribed");
+           _dbConnection.Users.Unsubscribe(_login.CurrentUser.UserId, userId);
+           _neo4jConnection.Users.DeleteRelationshipUserFollower(_login.CurrentUser.UserId, userId);
+            Console.WriteLine("Unsubscribed successfully");
         }
-        private void LikeOrDislikePost()
+        private void LikeOrUnlikePost()
         {
             Console.WriteLine("Post Id: ");
             var postId = Console.ReadLine();
@@ -257,6 +289,38 @@ namespace sns_nrdb.ConsoleApp
                 Console.WriteLine(follower.Name + " " + follower.Surname);
             }
         }
+
+        private void ShowIfFollows()
+        {
+            Console.WriteLine("User Id: ");
+            var userId = int.Parse(Console.ReadLine());
+            var ifFollows = _neo4jConnection.Users.IfFollows(_login.CurrentUser.UserId, userId);
+            Console.WriteLine("Follows: {0}", ifFollows);
+        }
+
+        private void ShowIfFriends()
+        {
+            Console.WriteLine("User Id: ");
+            var userId = int.Parse(Console.ReadLine());
+            var areFriends = _neo4jConnection.Users.AreFriends(_login.CurrentUser.UserId, userId);
+            Console.WriteLine("Are Friends: {0}", areFriends);
+        }
+
+        private void ShowPathLength()
+        {
+            Console.WriteLine("User Id: ");
+            var userId = int.Parse(Console.ReadLine());
+            var sp = _neo4jConnection.Users.ShortestPathToSearthedUser(_login.CurrentUser.UserId, userId);
+            if (sp == 0)
+            {
+                Console.WriteLine("There Is No Path To This User");
+            }
+            else
+            {
+                Console.WriteLine("Shortest Path: {0}", sp);
+            }
+
+        }
         private void ShowAnonymousUserMenu()
         {
             int input;
@@ -311,10 +375,14 @@ namespace sns_nrdb.ConsoleApp
                 ShowAnonymousUserMenu();
             }
         }
+
+
         private void SignOut()
         {
             _login.SignOut();
             ShowAnonymousUserMenu();
         }
+
+
     }
 }
